@@ -4,4 +4,6 @@
 */*.iml
 */.idea
 *.log
+*/*.log
+*/*.gz
 */target
