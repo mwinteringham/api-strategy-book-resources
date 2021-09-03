@@ -19,7 +19,9 @@ import java.time.LocalDate;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
+import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, classes = BookingApplication.class)
@@ -29,9 +31,11 @@ public class BookingApiIT {
     private static WireMockServer authMock;
 
     @BeforeAll
-    public static void setupMock(){
-         authMock = new WireMockServer(options().port(3004));
-         authMock.start();
+    public static void setupMock() throws InterruptedException {
+//        waitForApi("http://localhost:3000/booking/actuator/health", 20);
+
+        authMock = new WireMockServer(options().port(3004));
+        authMock.start();
     }
 
     @AfterAll
@@ -67,6 +71,29 @@ public class BookingApiIT {
                 "abc123");
 
         assertEquals(202, deleteResponse.getStatusCode());
+    }
+
+    private static void waitForApi(String url, int timeoutLimit) throws InterruptedException {
+        while(true){
+            if(timeoutLimit == 0){
+                fail("Unable to connect to Web API");
+            }
+
+            try{
+                Response response = given()
+                        .get(url);
+
+                if(response.statusCode() != 200){
+                    timeoutLimit--;
+                    Thread.sleep(1000);
+                } else {
+                    break;
+                }
+            } catch(Exception exception){
+                timeoutLimit--;
+                Thread.sleep(1000);
+            }
+        }
     }
 
 }
