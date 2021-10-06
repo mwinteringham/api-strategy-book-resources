@@ -1,0 +1,22 @@
+User flow:          Admin makes a booking
+Description:        An admin loads up the report view and makes a booking
+Virtual users:      2
+Injection profile:  Ramp up 2 minutes (1 guest per minute)
+Duration:           31000 (Deviance 9500)
+
+Step    Action                              Test Data                   System time (ms)    User think time (ms)
+1       Admin loads login page              None                        2000
+2       Admin logs into site                None                                            5000 (Deviance 2500)
+3       System logs admin into site         None                        2000
+4       Admin clicks on report              None                                            2000 (Deviance 1000)
+5       System returns report               <Rooms>, <Bookings>         2000
+6       Admin loads up booking form         None                                            2000 (Deviance 1000)
+7       System returns room details         <Rooms>                     2000
+8       Admin completes booking             None                                            10000 (Deviance 5000)
+9       System confirms booking             None                        2000
+
+<Rooms>
+| roomNumber | roomPrice | roomId | type | image | features | description | accessible |
+
+<Bookings>
+| bookingid | checkin | checkout | depositpaid | email | firstname | lastname | phone | roomid |

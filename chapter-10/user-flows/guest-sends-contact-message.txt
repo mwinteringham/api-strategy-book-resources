@@ -1,0 +1,16 @@
+User flow:          Guest sends a contact message
+Description:        A guest loads up the homepage and sends a message via the contact form
+Virtual users:      20
+Injection profile:  Ramp up X minutes (1 guest per minute)
+Duration:           24000 (5000 Deviance)
+
+Step    Action                                  Test Data                   System time (ms)    User think time (ms)
+1       Guest loads home page                   <Rooms>, <Branding>         2000                
+2       Guest completes the contact us form     None                                            20000 (Deviance 5000)
+3       System confirms message received        None                        2000
+
+<Rooms>
+| roomNumber | roomPrice | roomId | type | image | features | description | accessible |
+
+<Brandings>
+| address | email | name | phone | description | logoUrl | latitude | longitude | name |

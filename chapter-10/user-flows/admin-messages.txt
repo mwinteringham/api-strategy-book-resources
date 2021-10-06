@@ -1,0 +1,23 @@
+User flow:          Admin manages messages
+Description:        An admin views and then deletes a message
+Virtual users:      2
+Injection profile:  Ramp up 2 minutes (1 guest per minute)
+Duration:           40000 (Deviance 13500)
+
+Step    Action                              Test Data                   System time (ms)    User think time (ms)
+1       Admin loads login page              None                        2000
+2       Admin logs into site                None                                            5000 (Deviance 2500)
+3       System logs admin into site         None                        2000
+4       Admin opts to view messages         None                                            2000 (Deviance 1000)
+5       System returns messages             <Messages>                  2000
+6       Admin selects a message             None                                            5000 (Deviance 4000)
+7       System returns message details      None                        2000
+8       System marks message as read        None                        2000
+9       Admin closes message                None                                            10000 (Deviance 5000)
+10      System returns new message count    None                        2000
+11      Admin deletes messasge              None                                            2000 (Deviance 1000)
+12      System confirms deletion            None                        2000
+13      System returns count                None                        2000
+
+<Messages>
+| messageid | description | email | name | phone | subject |

@@ -1,0 +1,21 @@
+User flow:          Guest makes a booking
+Description:        A guest loads up the homepage and makes a room booking
+Virtual users:      20
+Injection profile:  Ramp up 20 minutes (1 guest per minute)
+Duration:           26000 (Deviance 10000)
+
+Step    Action                              Test Data                   System time (ms)    User think time (ms)
+1       Guest loads home page               <Rooms>, <Branding>         2000                
+2       Guest selects a room                None                                            10000 (Deviance 5000)
+3       System returns room availability    <Bookings>                  2000                
+4       Guest submits booking               None                                            10000 (Deviance 5000)
+5       System confirms booking             None                        2000
+
+<Rooms>
+| roomNumber | roomPrice | roomId | type | image | features | description | accessible |
+
+<Brandings>
+| address | email | name | phone | description | logoUrl | latitude | longitude | name |
+
+<Bookings>
+| bookingid | checkin | checkout | depositpaid | email | firstname | lastname | phone | roomid |

@@ -1,0 +1,19 @@
+User flow:          Admin manages rooms
+Description:        An admin creates a room and then edits it
+Virtual users:      2
+Injection profile:  Ramp up 2 minutes (1 guest per minute)
+Duration:           47000 (Deviance 18500)
+
+Step    Action                              Test Data                   System time (ms)    User think time (ms)
+1       Admin loads login page              None                        2000
+2       Admin logs into site                None                                            5000 (Deviance 2500)
+3       System logs admin into site         None                        2000
+4       Admin creates a new room            <Room>                                          10000 (Deviance 5000)
+5       System creates new room             None                        2000
+6       Admin selects room                  None                                            2000 (Deviance 1000)
+7       System returns room details         None                        2000
+8       Admin edits room details            None                                            20000 (Deviance 10000)
+9       System confirms edits               None                        2000
+
+<Room>
+| roomPrice | roomId | type | image | features | description | accessible |
