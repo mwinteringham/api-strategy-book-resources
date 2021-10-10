@@ -1,7 +1,7 @@
 User flow:          Guest makes a booking
 Description:        A guest loads up the homepage and makes a room booking
 Virtual users:      20
-Injection profile:  Ramp up 20 minutes (1 guest per minute)
+Injection profile:  Ramp up 5 minute (5 guests per minute)
 Duration:           26000 (Deviance 10000)
 
 Step    Action                              Test Data                   System time (ms)    User think time (ms)

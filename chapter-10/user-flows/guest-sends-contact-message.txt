@@ -1,7 +1,7 @@
 User flow:          Guest sends a contact message
 Description:        A guest loads up the homepage and sends a message via the contact form
 Virtual users:      20
-Injection profile:  Ramp up X minutes (1 guest per minute)
+Injection profile:  Ramp up 5 minute (5 guests per minute)
 Duration:           24000 (5000 Deviance)
 
 Step    Action                                  Test Data                   System time (ms)    User think time (ms)
