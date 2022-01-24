@@ -1,7 +1,7 @@
 User flow:          Admin manages messages
 Description:        An admin views and then deletes a message
 Virtual users:      2
-Injection profile:  Ramp up 2 minutes (1 guest per minute)
+Injection profile:  Ramp up 1 minute (1 admin per minute)
 Duration:           40000 (Deviance 13500)
 
 Step    Action                              Test Data                   System time (ms)    User think time (ms)

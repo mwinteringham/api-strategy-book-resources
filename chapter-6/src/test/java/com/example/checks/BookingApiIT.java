@@ -1,6 +1,9 @@
 package com.example.checks;
 
-import com.example.payloads.*;
+import com.example.payloads.Auth;
+import com.example.payloads.Booking;
+import com.example.payloads.BookingDates;
+import com.example.payloads.BookingResponse;
 import com.example.requests.AuthApi;
 import com.example.requests.BookingApi;
 import io.restassured.response.Response;
@@ -60,11 +63,12 @@ public class BookingApiIT {
 
         Auth auth = new Auth("admin", "password");
 
-        AuthResponse authResponse = AuthApi.postAuth(auth).as(AuthResponse.class);
+        Response authResponse = AuthApi.postAuth(auth);
+        String authToken = authResponse.getCookie("token");
 
         Response deleteResponse = BookingApi.deleteBooking(
                 createdBookingResponse.getBookingid(),
-                authResponse.getToken());
+                authToken);
 
         assertEquals(202, deleteResponse.getStatusCode());
     }

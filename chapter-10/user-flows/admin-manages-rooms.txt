@@ -1,7 +1,7 @@
 User flow:          Admin manages rooms
 Description:        An admin creates a room and then edits it
 Virtual users:      2
-Injection profile:  Ramp up 2 minutes (1 guest per minute)
+Injection profile:  Ramp up 1 minute (1 admin per minute)
 Duration:           47000 (Deviance 18500)
 
 Step    Action                              Test Data                   System time (ms)    User think time (ms)

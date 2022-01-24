@@ -1,7 +1,7 @@
 User flow:          Admin makes a booking
 Description:        An admin loads up the report view and makes a booking
 Virtual users:      2
-Injection profile:  Ramp up 2 minutes (1 guest per minute)
+Injection profile:  Ramp up 1 minute (1 admin per minute)
 Duration:           31000 (Deviance 9500)
 
 Step    Action                              Test Data                   System time (ms)    User think time (ms)
