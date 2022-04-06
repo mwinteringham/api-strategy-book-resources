@@ -10,8 +10,8 @@ public class BookingApi extends BaseApi {
 
     private static final String apiUrl = baseUrl + "booking/";
 
-    public static Response getBookings(){
-        return given().get(apiUrl);
+    public static Response getBookingSummary(){
+        return given().get(apiUrl + "summary?roomid=1");
     }
 
     public static Response postBooking(Booking payload) {

@@ -6,7 +6,6 @@ import com.example.payloads.BookingDates;
 import com.example.payloads.BookingResponse;
 import com.example.requests.AuthApi;
 import com.example.requests.BookingApi;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BookingApiIT {
 
     @Test
-    public void getBookingShouldReturn200(){
-        Response response = BookingApi.getBookings();
+    public void getBookingSummaryShouldReturn200(){
+        Response response = BookingApi.getBookingSummary();
 
         assertEquals(200, response.getStatusCode());
     }
