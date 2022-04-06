@@ -6,6 +6,7 @@ import com.example.payloads.BookingDates;
 import com.example.payloads.BookingResponse;
 import com.example.requests.AuthApi;
 import com.example.requests.BookingApi;
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
@@ -32,18 +33,19 @@ public class BookingApiIT {
         Booking payload = new Booking(
                 1,
                 "Mark",
-                "Winteringham",
+                "Auto",
                 true,
                 dates,
                 "Breakfast"
         );
 
         Response response = BookingApi.postBooking(payload);
+
+        assertEquals(201, response.getStatusCode());
     }
 
     @Test
     public void deleteBookingReturns202(){
-
         BookingDates dates = new BookingDates(
                 LocalDate.of( 2021 , 2 , 1 ),
                 LocalDate.of( 2021 , 2 , 3 )
