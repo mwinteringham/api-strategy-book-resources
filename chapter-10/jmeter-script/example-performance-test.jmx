@@ -345,7 +345,7 @@
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Login into admin" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Log into admin" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /auth/validate" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -595,7 +595,7 @@
           <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
         </CookieManager>
         <hashTree/>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Login into admin" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Log into admin" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /auth/validate" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -912,7 +912,7 @@
           <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
         </CookieManager>
         <hashTree/>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Login into admin" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Log into admin" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /auth/validate" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
